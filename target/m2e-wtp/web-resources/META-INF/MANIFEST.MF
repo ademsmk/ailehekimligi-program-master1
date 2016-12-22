@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Title: ailehekimligi-program-master1 Maven Webapp
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: ailehekimligi-program-master1
+Build-Jdk: 1.7.0_79
+Built-By: Kafein
+Created-By: Maven Integration for Eclipse
+Implementation-URL: http://maven.apache.org
+

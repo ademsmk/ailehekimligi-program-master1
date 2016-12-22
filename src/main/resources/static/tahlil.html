@@ -1,0 +1,117 @@
+
+<form class="form-horizontal" role="form" ng-submit="demo.addRow(demo)">
+	<div class="form-group">
+		<label class="col-md-2 control-label">Tarih</label>
+		<div class="col-md-4">
+			<input type="date" class="form-control" name="hasta_Tc"
+				ng-model="demo.tahlil_Date" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Tamkan</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.hasta_Adi"
+				ng-model="demo.tamkan" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Demir</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="hasta_SoyAdi"
+				ng-model="demo.demir" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Demir Baglama</label>
+		<div class="col-md-4">
+		 <input type="text" class="form-control" ng-model="demo.demir_Baglama"  md-placeholder="Enter date">
+<!-- 			<input type="text" class="form-control" name="headoffice" -->
+<!-- 				ng-model="demo.dog_Tar" /> -->
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="col-md-2 control-label">Kolestrol</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="headoffice"
+				ng-model="demo.kolestrol" />
+		</div>
+	</div>
+
+		<div class="form-group">
+		<label class="col-md-2 control-label">Alt</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="headoffice"
+				ng-model="demo.alt" />
+		</div>
+	</div>
+
+		<div class="form-group">
+		<label class="col-md-2 control-label">Ast</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="headoffice"
+				ng-model="demo.ast" />
+		</div>
+	</div>
+	
+    
+    
+	<div class="form-group">
+		<label class="col-md-2 control-label">Glikoz</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.uyruk"
+				ng-model="demo.glikoz" />
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-md-2 control-label">Crp</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.uyruk"
+				ng-model="demo.crp" />
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="col-md-2 control-label">Tamidrar</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.uyruk"
+				ng-model="demo.tamidrar" />
+		</div>
+	</div>
+    <br>
+	<div class="form-group">								
+		<div style="float: right;">
+		<div class="col-md-4">
+			<input type="submit" value="Hasta Ekle" class="btn btn-primary"/>
+		</div>
+		</div>
+	</div>
+</form>
+
+<table ng-table="demo.tableParams" class="table" style="text-align: center;">
+    <tr ng-repeat="tahlil in $data">
+        <td title="'Tarih'"  sortable="'Hasta TC'">
+            {tahlil.tahlil_Date}}</td>
+                    <td title="'Tamkan'"  sortable="'Tamkan'">
+            {{tahlil.tamkan}}</td>
+             <td title="'Demir'"  sortable="'Demir'">
+            {{tahlil.demir}}</td>
+              <td title="'Demir Baglama'"  sortable="'Demir Baglama'">
+            {{nufus.demir_Baglama}}</td>
+               <td title="'Kolestrol'"  sortable="'Kolestrol'">
+            {{tahlil.kolestrol}}</td>
+              <td title="'Alt'"  sortable="'Alt'">
+            {{tahlil.alt}}</td>
+              <td title="'Ast'"  sortable="'Ast'">
+            {{tahlil.ast}}</td>
+                          <td title="'Glikoz'"  sortable="'Glikoz'">
+            {{tahlil.demo.glikoz}}</td>
+                          <td title="'Crp'"  sortable="'Crp'">
+            {{tahlil.crp}}</td>
+            <td title="'Tamidrar'"  sortable="'tamidrar'">
+            {{tahlil.tamidrar}}</td>
+            <td data-title="" style="text-align: center;">
+           <button class="btn btn-primary" ng-click="demo.del(tahlil)">sil</button>
+             </td> 
+    </tr>
+</table>
+

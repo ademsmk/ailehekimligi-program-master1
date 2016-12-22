@@ -1,0 +1,197 @@
+<form class="form-horizontal" role="form" ng-submit="demo.addRow(form)">
+	<div class="form-group">
+		<label class="col-md-2 control-label">Doktor Adi</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="kurum_ad"
+				ng-model="demo.dr_Adi" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Doktor Soyadi</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="kurum_adres"
+				ng-model="demo.dr_SoyAdi" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Doktor Tel</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="headoffice"
+				ng-model="demo.dr_Tel" />
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="col-md-2 control-label">Doktor Mail</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="headoffice"
+				ng-model="demo.dr_Mail" />
+		</div>
+	</div>
+	
+	<div class="form-group">
+	<label class="col-md-2 control-label">Kurum</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.kurum" >
+       <option ng-repeat="kurums in demo.kurumlar" value="{{kurums}}">{{kurums.kurum_Adi}}</option>
+    </select>
+    </div>
+    </div>
+    
+    <br>
+	<div class="form-group">								
+		<div style="float: right;">
+		<div class="col-md-4">
+			<input type="submit" value="Doktor Ekle" class="btn btn-primary"/>
+		</div>
+		</div>
+	</div>
+</form>
+
+<table ng-table="demo.tableParams" class="table" style="text-align: center;">
+    <tr ng-repeat="doktor in $data">
+        <td title="'Doktor Adi'"  sortable="'Doktor Adi'">
+            {{doktor.dr_Adi}}</td> 
+        <td title="'Doktor SoyAdi'"  sortable="'Doktor SoyAdi'">
+            {{doktor.dr_SoyAdi}}</td>
+                    <td title="'Doktor Tel'" sortable="'Doktor Tel'" >
+            {{doktor.dr_Tel}}</td>
+            <td title="'Doktor Mail'" sortable="'Doktor Mail'" >
+            {{doktor.dr_Mail}}</td>
+             <td title="'Doktor Kurum'" sortable="'Doktor Kurum'" >
+            {{doktor.kurum.kurum_Adi}}</td>
+            
+            <td data-title="" style="text-align: center;">
+           <button class="btn btn-primary" ng-click="demo.del(doktor)">sil</button>
+             </td> 
+    </tr>
+</table>
+
+<!-- <table ng-table="demo.tableParams" class="table" show-filter="true" style="text-align: center;"> -->
+<!--     <tr ng-repeat="kurum in $data"> -->
+<!--         <td ng-if="false" title="''"  sortable="'Kurum Adi'"> -->
+<!--             {{kurum.kurum_Kodu}}</td>  -->
+<!--         <td title="'Kurum Adi'"  sortable="'Kurum Adi'"> -->
+<!--             {{kurum.kurum_Adi}}</td> -->
+<!--                     <td title="'Kurum Adress'" sortable="'Kurum Adress'" > -->
+<!--             {{kurum.kurum_Adress}}</td> -->
+<!--             <td title="'Kurum Tel'" sortable="'Kurum Tel'" > -->
+<!--             {{kurum.kurum_Tel}}</td> -->
+<!--             <td data-title="" style="text-align: center;"> -->
+<!--            <button class="btn btn-primary" ng-click="demo.del(kurum)">sil</button> -->
+<!--              </td>  -->
+<!--     </tr> -->
+<!-- </table> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <table ng-table="demo.tableParams" class="table table-striped"> -->
+<!--    <tr ng-repeat="user in $data"> -->
+<!--        <td data-title="'Id'" style="text-align: center;" style="display: hidden"> -->
+<!--            {{user.kurum_Kodu}} -->
+<!--        </td> -->
+<!--        <td data-title="'Kurum Adi'" style="text-align: center;" > -->
+<!--            {{user.kurum_Adi}} -->
+<!--        </td> -->
+<!--        <td data-title="'Kurum Adresi'" style="text-align: center;"> -->
+<!--            {{user.kurum_Adres}} -->
+<!--        </td>     -->
+<!--        <td data-title="'Kurum Tel'" style="text-align: center;"> -->
+<!--            {{user.kurum_Tel}}  </td>   -->
+<!--         <td data-title="" style="text-align: center;"> -->
+<!--            <button class="btn btn-primary" ng-click="demo.del(user)">sil</button> -->
+<!--              </td>  -->
+<!--    </tr> -->
+<!-- </table> -->
+
+
+<!-- <button ng-click="demo.addrow()">Add Row</button> -->
+<!-- <table ng-table="demo.tableParams" class="table table-striped"> -->
+<!--     <tr ng-repeat="user in $data"> -->
+<!--        <td data-title="'Id'" style="text-align: center;" style="display: hidden"> -->
+<!--            {{user.kurum_Kodu}} -->
+<!--        </td> -->
+<!--        <td data-title="'Kurum Adi'" style="text-align: center;" > -->
+<!--            {{user.kurum_Adi}} -->
+<!--        </td> -->
+<!--        <td data-title="'Kurum Adresi'" style="text-align: center;"> -->
+<!--            {{user.kurum_Adres}} -->
+<!--        </td>     -->
+<!--        <td data-title="'Kurum Tel'" style="text-align: center;"> -->
+<!--            {{user.kurum_Tel}}  </td>   -->
+<!--         <td data-title="" style="text-align: center;"> -->
+<!--            <button class="btn btn-primary" ng-click="demo.del(user)">sil</button> -->
+<!--              </td>  -->
+<!--    </tr> -->
+<!-- </table> -->
+
+
+<!--  <h3>ngTable directive</h3> -->
+<!--       <table ng-table="demo.tableParams" class="table table-bordered table-hover table-condensed editable-table demoTable" ng-form="demo.tableForm" disable-filter="true" demo-tracked-table="demo.tableTracker"> -->
+<!--         <colgroup> -->
+<!--           <col width="30%" /> -->
+<!--           <col width="30%" /> -->
+<!--           <col width="25%" /> -->
+<!--           <col width="15%" /> -->
+<!--         </colgroup> -->
+<!--         <tr ng-repeat="row in $data" ng-form="rowForm" demo-tracked-table-row="row"> -->
+<!--           <td title="'Kurum Adi'"  sortable="'Kurum Adi'" ng-switch="row.isEditing" ng-class="name.$dirty ? 'bg-warning' : ''" ng-form="name" demo-tracked-table-cell> -->
+<!--             <span ng-switch-default class="editable-text">{{row.kurum_Adi}}</span> -->
+<!--             <div class="controls" ng-class="name.$invalid && name.$dirty ? 'has-error' : ''" ng-switch-when="true"> -->
+<!--               <input type="text" name="name" ng-model="row.kurum_Adi" class="editable-input form-control input-sm" required /> -->
+<!--             </div> -->
+<!--           </td> -->
+<!--           <td title="'Kurum Adresi'" filter="{age: 'number'}" sortable="'age'" ng-switch="row.isEditing" ng-class="age.$dirty ? 'bg-warning' : ''" ng-form="age" demo-tracked-table-cell> -->
+<!--             <span ng-switch-default class="editable-text">{{row.kurum_Adres}}</span> -->
+<!--             <div class="controls" ng-class="age.$invalid && age.$dirty ? 'has-error' : ''" ng-switch-when="true"> -->
+<!--               <input type="number" name="age" ng-model="row.kurum_Adres" class="editable-input form-control input-sm" required/> -->
+<!--             </div> -->
+<!--           </td> -->
+<!--           <td title="'Kurum Telefonu'" filter="{money: 'number'}" sortable="'money'" ng-switch="row.isEditing" ng-class="money.$dirty ? 'bg-warning' : ''" ng-form="money" demo-tracked-table-cell> -->
+<!--             <span ng-switch-default class="editable-text">{{row.kurum_Tel}}</span> -->
+<!--             <div class="controls" ng-class="money.$invalid && money.$dirty ? 'has-error' : ''" ng-switch-when="true"> -->
+<!--               <input type="number" name="money" ng-model="row.money" class="editable-input form-control input-sm" required/> -->
+<!--             </div> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <button class="btn btn-primary btn-sm" ng-click="demo.save(row, rowForm)" ng-if="row.isEditing" ng-disabled="rowForm.$pristine || rowForm.$invalid"><span class="glyphicon glyphicon-ok"></span></button> -->
+<!--             <button class="btn btn-default btn-sm" ng-click="demo.cancel(row, rowForm)" ng-if="row.isEditing"><span class="glyphicon glyphicon-remove"></span></button> -->
+<!--             <button class="btn btn-default btn-sm" ng-click="row.isEditing = true" ng-if="!row.isEditing"><span class="glyphicon glyphicon-pencil"></span></button> -->
+<!--             <button class="btn btn-danger btn-sm" ng-click="demo.del(row)" ng-if="!row.isEditing"><span class="glyphicon glyphicon-trash"></span></button> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--       </table> -->
+
+<!-- <table ng-table="demo.tableParams" class="table" show-filter="true"> -->
+<!--     <tr ng-repeat="kurum in $data"> -->
+<!--         <td title="'Name'" filter="{ name: 'text'}" sortable="'Kurum Adi'"> -->
+<!--             {{kurum.kurum_Adi}}</td> -->
+<!--                     <td title="'Kurum Adress'" filter="{ name: 'text'}" sortable="'Kurum Adress'"> -->
+<!--             {{kurum.kurum_Adres}}</td> -->
+<!--             <td title="'Kurum Tel'" filter="{ name: 'text'}" sortable="'Kurum Tel'"> -->
+<!--             {{kurum.kurum_Tel}}</td> -->
+<!-- <!--         <td title="'Age'" filter="{ age: 'number'}" sortable="'age'"> -->
+<!-- <!--             {{user.age}}</td> -->
+<!--     </tr> -->
+<!-- </table> -->
