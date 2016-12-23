@@ -1,0 +1,96 @@
+<form class="form-horizontal" id="form" role="form" ng-submit="demo.addRow(form)">
+	<div class="form-group">
+	<label class="col-md-2 control-label">Hasta</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.nufus" >
+       <option ng-repeat="nufs in demo.hastalar track by $index" value="{{nufs}}">{{nufs.hasta_Adi +" "+nufs.hasta_Soyadi}}</option>
+    </select>
+    </div>
+    </div>
+    
+    <div class="form-group">
+	<label class="col-md-2 control-label">Doktor</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.doktor" >
+       <option ng-repeat="doktors in demo.doktorlar track by $index" value="{{doktors}}">{{doktors.dr_Adi +" "+doktors.dr_SoyAdi}}</option>
+    </select>
+    </div>
+    </div>
+    
+      <div class="form-group">
+	<label class="col-md-2 control-label">Kurum</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.kurum" >
+       <option ng-repeat="kurums in demo.kurumlar track by $index" value="{{kurums}}">{{kurums.kurum_Adi}}</option>
+    </select>
+    </div>
+    </div>
+    
+    <div class="form-group">
+	<label class="col-md-2 control-label">Tani</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.tani" >
+       <option ng-repeat="tanis in demo.tanilar track by $index" value="{{tanis}}">{{tanis.tani_Adi}}</option>
+    </select>
+    </div>
+    </div>
+    
+    <div class="form-group">
+		<label class="col-md-2 control-label">Tarih</label>
+		<div class="col-md-4">
+			<input type="date" class="form-control" name="demo.rapor_Tar"
+				ng-model="demo.rapor_Tar" />
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-md-2 control-label">Sure</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.rapor_Sure"
+				ng-model="demo.rapor_Sure" />
+		</div>
+	</div>
+	
+	 <div class="form-group">
+	<label class="col-md-2 control-label">Recete No</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.recete" >
+       <option ng-repeat="recetes in demo.receteler track by $index" value="{{recetes}}">{{recetes.recete_No}}</option>
+    </select>
+    </div>
+    </div>
+	
+    
+    <br>
+	<div class="form-group">								
+		<div style="float: right;">
+		<div class="col-md-4">
+			<input type="submit" value="Rapor Ekle" class="btn btn-primary"/>
+		</div>
+		</div>
+	</div>
+</form>
+
+<table ng-table="demo.tableParams" class="table" style="text-align: center;">
+    <tr ng-repeat="rapor in $data">
+        <td title="'Hasta'"  sortable="'Hasta TC'">
+            {{rapor.nufus.hasta_Adi +" "+recete.nufus.hasta_Soyadi}}</td>
+                    <td title="'Doktor'"  sortable="'Tamkan'">
+            {{rapor.doktor.dr_Adi +" "+recete.doktor.dr_SoyAdi}}</td>
+             <td title="'Kurum'"  sortable="'Demir'">
+            {{rapor.kurum.kurum_Adi}}</td>
+              <td title="'Tani'"  sortable="'Demir Baglama'">
+            {{rapor.tani.tani_Adi}}</td>
+               <td title="'Recete No'"  sortable="'Recete No'">
+            {{rapor.recete.recete_No}}</td> 
+            <td title="'Tarih'"  sortable="'Recete No'">
+            {{rapor.rapor_Tar}}</td> 
+            <td title="'Sure'"  sortable="'Recete No'">
+            {{rapor.rapor_Sure}}</td>  
+ 
+            <td data-title="" style="text-align: center;">
+           <button class="btn btn-primary" ng-click="demo.del(recete)">sil</button>
+             </td> 
+    </tr>
+</table>
+

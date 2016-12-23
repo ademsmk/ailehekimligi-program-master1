@@ -1,0 +1,59 @@
+<form class="form-horizontal" id="form" role="form" ng-submit="demo.addRow(form)">
+	
+	<div class="form-group">
+	<label class="col-md-2 control-label">Hasta</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.nufus" >
+       <option ng-repeat="nufs in demo.hastalar track by $index" value="{{nufs}}">{{nufs.hasta_Adi +" "+nufs.hasta_Soyadi}}</option>
+    </select>
+    </div>
+    </div>
+    
+    <div class="form-group">
+	<label class="col-md-2 control-label">Doktor</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.doktor" >
+       <option ng-repeat="doktors in demo.doktorlar track by $index" value="{{doktors}}">{{doktors.dr_Adi +" "+doktors.dr_SoyAdi}}</option>
+    </select>
+    </div>
+    </div>
+    
+	<div class="form-group">
+		<label class="col-md-2 control-label">Tarih</label>
+		<div class="col-md-4">
+			<input type="date" class="form-control" name="demo.muayene_Tar"
+				ng-model="demo.muayene_Tar" />
+		</div>
+	</div>
+	
+
+	
+    
+    <br>
+	<div class="form-group">								
+		<div style="float: right;">
+		<div class="col-md-4">
+			<input type="submit" value="Randevu Ekle" class="btn btn-primary"/>
+		</div>
+		</div>
+	</div>
+</form>
+
+<table ng-table="demo.tableParams" class="table" style="text-align: center;">
+    <tr ng-repeat="randevu in $data">
+       <td title="'Sýra No'"  sortable="'Hasta TC'">
+            {{randevu.sira_No}}</td>
+       
+        <td title="'Hasta'"  sortable="'Hasta TC'">
+            {{randevu.nufus.hasta_Adi +" "+recete.nufus.hasta_Soyadi}}</td>
+                    <td title="'Doktor'"  sortable="'Tamkan'">
+            {{randevu.doktor.dr_Adi +" "+recete.doktor.dr_SoyAdi}}</td>
+            <td title="'Tarih'"  sortable="'Recete No'">
+            {{randevu.muayene_Tar}}</td> 
+ 
+            <td data-title="" style="text-align: center;">
+           <button class="btn btn-primary" ng-click="demo.del(randevu)">sil</button>
+             </td> 
+    </tr>
+</table>
+

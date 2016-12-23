@@ -1,0 +1,117 @@
+<form class="form-horizontal" id="form" role="form" ng-submit="demo.addRow(form)">
+	
+	
+	<div class="form-group">
+		<label class="col-md-2 control-label">Tarih</label>
+		<div class="col-md-4">
+			<input type="date" class="form-control" name="demo.muayene_Tar"
+				ng-model="demo.muayene_Tar" />
+		</div>
+	</div>
+    
+    <div class="form-group">
+	<label class="col-md-2 control-label">Tani</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.tani" >
+       <option ng-repeat="tanis in demo.tanilar track by $index" value="{{tanis}}">{{tanis.tani_Adi}}</option>
+    </select>
+    </div>
+    </div>
+    
+     <div class="form-group">
+	<label class="col-md-2 control-label">Tahlil No</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.tahlil" >
+       <option ng-repeat="tahlils in demo.tahliller track by $index" value="{{tahlils}}">{{tahlils.tahlil_No}}</option>
+    </select>
+    </div>
+    </div>
+	
+	 <div class="form-group">
+	<label class="col-md-2 control-label">Recete No</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.recete" >
+       <option ng-repeat="recetes in demo.receteler track by $index" value="{{recetes}}">{{recetes.recete_No}}</option>
+    </select>
+    </div>
+    </div>
+   
+	
+	<div class="form-group">
+		<label class="col-md-2 control-label">Ates</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.ates"
+				ng-model="demo.ates" />
+		</div>
+	</div>
+	
+
+		
+	<div class="form-group">
+		<label class="col-md-2 control-label">Nabiz</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.nabiz"
+				ng-model="demo.nabiz" />
+		</div>
+	</div>
+		
+	<div class="form-group">
+		<label class="col-md-2 control-label">Solunum</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.solunum"
+				ng-model="demo.solunum" />
+		</div>
+	</div>
+		
+	<div class="form-group">
+		<label class="col-md-2 control-label">Tansiyon</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.tansiyon"
+				ng-model="demo.tansiyon" />
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-md-2 control-label">Genel Durum</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.genel_durum"
+				ng-model="demo.genel_durum" />
+		</div>
+	</div>
+	
+	   
+    <br>
+	<div class="form-group">								
+		<div style="float: right;">
+		<div class="col-md-4">
+			<input type="submit" value="Muayene Ekle" class="btn btn-primary"/>
+		</div>
+		</div>
+	</div>
+</form>
+
+<table ng-table="demo.tableParams" class="table" style="text-align: center;">
+    <tr ng-repeat="muayene in $data">
+                    <td title="'Tarih'"  sortable="'Tamkan'">
+            {{muayene.muayene_Tar}}</td>
+             <td title="'Tani'"  sortable="'Demir'">
+            {{muayene.tani.tani_Adi}}</td>
+              <td title="'Tahlil No'"  sortable="'Demir Baglama'">
+            {{muayene.tahlil.tahlil_No}}</td>
+               <td title="'Recete No'"  sortable="'Recete No'">
+            {{muayene.recete.recete_No}}</td> 
+            <td title="'Ates'"  sortable="'Recete No'">
+            {{muayene.ates}}</td> 
+            <td title="'Solunum'"  sortable="'Recete No'">
+            {{muayene.solunum}}</td>
+                        <td title="'Nabiz'"  sortable="'Recete No'">
+            {{muayene.nabiz}}</td>
+                        <td title="'Genel Durum'"  sortable="'Recete No'">
+            {{muayene.genel_Durum}}</td>  
+ 
+            <td data-title="" style="text-align: center;">
+           <button class="btn btn-primary" ng-click="demo.del(muayene)">sil</button>
+             </td> 
+    </tr>
+</table>
+
