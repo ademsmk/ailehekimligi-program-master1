@@ -1,0 +1,93 @@
+<form class="form-horizontal" role="form" ng-submit="demo.addRow(form)">
+	<div class="form-group">
+		<label class="col-md-2 control-label">Hastane Adi</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="hasta_Tc"
+				ng-model="demo.hastane_Adi" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Sevk Tarih</label>
+		<div class="col-md-4">
+			<input type="date" class="form-control" name="demo.sevk_tarihi"
+				ng-model="demo.sevk_tarihi" />
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-md-2 control-label">Hasta Tc</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.hasta_Tc"
+				ng-model="demo.hasta_Tc" />
+		</div>
+		</div>
+	
+
+	<div class="form-group">
+		<label class="col-md-2 control-label">Hasta SoyAdi</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.hasta_Adi"
+				ng-model="demo.hasta_Adi" />
+		</div>
+	</div>
+		<div class="form-group">
+		<label class="col-md-2 control-label">Hasta Soyadi</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.hasta_Soyadi"
+				ng-model="demo.hasta_Soyadi" />
+		</div>
+	</div>
+	
+		<div class="form-group">
+		<label class="col-md-2 control-label">Hasta Sikayet</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="demo.hasta_Sikayet"
+				ng-model="demo.hasta_Sikayet" />
+		</div>
+	</div>
+	
+
+	<div class="form-group">
+	<label class="col-md-2 control-label">Bolum</label>
+	<div class="col-md-4">
+	 <select name="multipleSelect" class="form-control" id="multipleSelect" ng-model="demo.bolum" >
+       <option ng-repeat="bolums in demo.bolumler" value="{{bolums}}">{{bolums.bolum_Adi}}</option>
+    </select>
+    </div>
+    </div>
+ 
+	
+	<div class="form-group">								
+		<div style="float: right;">
+		<div class="col-md-4">
+			<input type="submit" value="Bolum Ekle" class="btn btn-success"/>
+		</div>
+		</div>
+	</div>
+
+</form>
+
+<table ng-table="demo.tableParams" class="table" style="text-align: center;">
+    <tr ng-repeat="sevk in $data">
+        <td title="'Hastane Adi'"  sortable="'Dogum Tarih'">
+            {{sevk.hastane_Adi}}</td>
+         <td title="'Sevk Tarihi'"  sortable="'Baba Adi'">
+            {{sevk.sevk_tarihi}}</td>
+        <td title="'Hasta Tc'"  sortable="'Hasta TC'">
+            {{sevk.sevk_tarihi}}</td>
+                    <td title="'Hasta Adi'"  sortable="'Hasta Adi'">
+            {{sevk.hasta_Adi}}</td>
+             <td title="'Hasta SoyAdi'"  sortable="'Hasta SoyAdi'">
+            {{sevk.hasta_Soyadi}}</td>
+              
+               <td title="'Hasta Sikayet'"  sortable="'Dogum Yeri'">
+            {{sevk.hasta_Sikayet}}</td>
+              <td title="'Bolum'"  sortable="'Anne Adi'">
+            {{sevk.bolum.bolum_Adi}}</td>
+
+	       <td data-title="" style="text-align: center;">
+           <button class="btn btn-primary" ng-click="demo.del(sevk)">sil</button>
+           </td> 
+    </tr>
+</table>
+
